@@ -16,7 +16,7 @@ uint8_t now;
 uint8_t old_now;
 uint8_t last_servo_out;
 
-uint32_t blah = 37483;
+int blah = 37483;
 
 
 void setup() {
@@ -28,6 +28,7 @@ void loop() {
   if ((now >= last_servo_out + servo_rate) || (old_now > now)) // only send to servo when it is time
   {
     blah++;
+    analogWrite(0, blah);
     // get analog and map to PWM mircos
     val = analogRead(potpin);
     val = map(val, 0, 1023, 0, 180);
@@ -39,9 +40,3 @@ void loop() {
   }
   old_now = now;
 }
-
-int test_yes() {
-  return 6;
-}
-
-int what = test_yes();
