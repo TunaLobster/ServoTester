@@ -27,6 +27,7 @@ void loop() {
   now = millis();
   if ((now >= last_servo_out + servo_rate) || (old_now > now)) // only send to servo when it is time
   {
+    blah++;
     // get analog and map to PWM mircos
     val = analogRead(potpin);
     val = map(val, 0, 1023, 0, 180);
