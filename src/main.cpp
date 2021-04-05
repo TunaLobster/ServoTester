@@ -35,6 +35,7 @@ void loop() {
     // set servo
     // myservo.writeMicroseconds(val);
     myservo.write(val);
+    last_servo_out = now;
   }
   old_now = now;
 }
